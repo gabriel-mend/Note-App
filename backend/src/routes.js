@@ -1,9 +1,8 @@
 const { Router } = require('express');
+const noteController = require('./controllers/noteController');
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
-    return res.send("NoteApp-Api version: 1.0");
-})
+routes.post('/', noteController.create);
 
 module.exports = routes;
